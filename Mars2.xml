@@ -13,8 +13,8 @@
           <block type="logic_compare" id="4" inline="true">
             <field name="OP">LT</field>
             <value name="A">
-              <block type="sensor_object" id="5">
-                <field name="OBJECT">LEFTFRONT</field>
+              <block type="sensor_spectrometer" id="34">
+                <field name="LIGHT">RED</field>
               </block>
             </value>
             <value name="B">
@@ -33,21 +33,31 @@
             </value>
             <value name="BOTHMOVRIGHT">
               <block type="math_number" id="9">
-                <field name="NUM">-95</field>
+                <field name="NUM">50</field>
               </block>
             </value>
           </block>
         </statement>
         <value name="IF1">
-          <block type="sensor_object" id="10">
-            <field name="OBJECT">RIGHTFRONT</field>
+          <block type="logic_compare" id="42" inline="true">
+            <field name="OP">GT</field>
+            <value name="A">
+              <block type="sensor_spectrometer" id="49">
+                <field name="LIGHT">RED</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="51">
+                <field name="NUM">100</field>
+              </block>
+            </value>
           </block>
         </value>
         <statement name="DO1">
           <block type="movement_setmotors" id="11" inline="true">
             <value name="BOTHMOVLEFT">
               <block type="math_number" id="12">
-                <field name="NUM">-100</field>
+                <field name="NUM">50</field>
               </block>
             </value>
             <value name="BOTHMOVRIGHT">
